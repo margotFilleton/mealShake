@@ -1,0 +1,18 @@
+PODS:
+  - Alamofire (4.0.1)
+  - DynamicColor (3.1.0)
+  - Tactile (2.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.0)
+  - DynamicColor (~> 3.1.0)
+  - Tactile (~> 2.0)
+
+SPEC CHECKSUMS:
+  Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  DynamicColor: 4dec283a881f7f9d9f3bc88fb5f306724242575f
+  Tactile: 22d5686693be17568351b95aa83ef37457cd40f4
+
+PODFILE CHECKSUM: 632b59c2be83872a2ece4a136cb9559995286e0f
+
+COCOAPODS: 1.2.0
