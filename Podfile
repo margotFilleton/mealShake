@@ -7,7 +7,9 @@ target 'mealShake' do
  pod 'Alamofire', '~> 4.0'
  pod 'Tactile', '~> 2.0'
  pod 'DynamicColor', '~> 3.1.0'
-
+ pod 'GoogleMaps'
+ pod 'GooglePlaces'
+ 
 end
 
 post_install do |installer|
