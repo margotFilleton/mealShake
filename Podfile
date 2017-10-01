@@ -3,12 +3,13 @@ platform :ios, '10.0'
 use_frameworks!
 
 target 'mealShake' do
-
- pod 'Alamofire', '~> 4.0'
+ pod 'Alamofire', '~> 4.5.0'
  pod 'Tactile', '~> 2.0'
  pod 'DynamicColor', '~> 3.1.0'
  pod 'GoogleMaps'
  pod 'GooglePlaces'
+ pod 'SwiftyJSON'
+ 
  
 end
 

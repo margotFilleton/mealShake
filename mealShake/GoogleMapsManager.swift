@@ -8,6 +8,7 @@
 
 import Foundation
 import GoogleMaps
+import GooglePlaces
 import UIKit
 
 class GoogleMapsManager: NSObject, CLLocationManagerDelegate {
@@ -15,6 +16,7 @@ class GoogleMapsManager: NSObject, CLLocationManagerDelegate {
     
     var locationManager = CLLocationManager()
     var currentLocation: CLLocation?
+    var placesClient: GMSPlacesClient!
     
     override init() {
         super.init()
@@ -24,6 +26,8 @@ class GoogleMapsManager: NSObject, CLLocationManagerDelegate {
         locationManager.distanceFilter = 50
         locationManager.startUpdatingLocation()
         locationManager.delegate = self
+        
+        placesClient = GMSPlacesClient.shared()
 
     }
     
@@ -34,8 +38,8 @@ class GoogleMapsManager: NSObject, CLLocationManagerDelegate {
     // Handle incoming location events.
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         currentLocation = locations.last!
-        print("ok")
     }
+    
     
     // Handle authorization for the location manager.
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
@@ -51,4 +55,9 @@ class GoogleMapsManager: NSObject, CLLocationManagerDelegate {
             print("Location status is OK.")
         }
     }
+    
+    
+    
+    
+    
 }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5A98F7E83340C73A0A05EFBC /* Pods_mealShake.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D079D0734727EDF45AADA63E /* Pods_mealShake.framework */; };
+		8521B9531F81656B0085449F /* GoogleApiPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8521B9521F81656B0085449F /* GoogleApiPlace.swift */; };
 		8577381E1E9A9D9000002CAB /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8577381D1E9A9D9000002CAB /* LaunchViewController.swift */; };
 		857738201E9AA12C00002CAB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8577381F1E9AA12C00002CAB /* MainViewController.swift */; };
 		857738221E9AA26300002CAB /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857738211E9AA26300002CAB /* Theme.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8521B9521F81656B0085449F /* GoogleApiPlace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleApiPlace.swift; sourceTree = "<group>"; };
 		8577381D1E9A9D9000002CAB /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		8577381F1E9AA12C00002CAB /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		857738211E9AA26300002CAB /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 		857738191E9A9CC600002CAB /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				8521B9521F81656B0085449F /* GoogleApiPlace.swift */,
 				857738211E9AA26300002CAB /* Theme.swift */,
 				85A2D6FE1E9AA9630036FCC2 /* APIKey.swift */,
 				85A2D7001E9AAB8F0036FCC2 /* GoogleMapsManager.swift */,
@@ -294,13 +297,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-mealShake-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		86B0F1E1F5E204FA054C86DE /* [CP] Copy Pods Resources */ = {
@@ -309,9 +315,13 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-mealShake/Pods-mealShake-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Subspecs/Maps/Frameworks/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Versions/A/Resources/GooglePlaces.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -324,9 +334,18 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-mealShake/Pods-mealShake-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/DynamicColor/DynamicColor.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/Tactile/Tactile.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DynamicColor.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Tactile.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -343,6 +362,7 @@
 				8577381E1E9A9D9000002CAB /* LaunchViewController.swift in Sources */,
 				857738221E9AA26300002CAB /* Theme.swift in Sources */,
 				85C9EEE71E9A96E000735399 /* AppDelegate.swift in Sources */,
+				8521B9531F81656B0085449F /* GoogleApiPlace.swift in Sources */,
 				85A2D6FF1E9AA9630036FCC2 /* APIKey.swift in Sources */,
 				857738201E9AA12C00002CAB /* MainViewController.swift in Sources */,
 				85A2D7011E9AAB8F0036FCC2 /* GoogleMapsManager.swift in Sources */,

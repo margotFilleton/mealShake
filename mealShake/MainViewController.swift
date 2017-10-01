@@ -17,11 +17,17 @@ class MainViewController: UIViewController {
         view.backgroundColor = Theme.mainColor
     }
 
+    //Device Shaken
     override func motionBegan(_ motion: UIEventSubtype, with event: UIEvent?) {
         //TODO loader wait location
         userLocation = GoogleMapsManager.instance.getUserLocation()
-        
-        print("Device was shaken!")
-        print(userLocation ?? "location not set")
+      
+        if userLocation != nil {
+            GoogleApiPlace.getplaceId(latitude: String(describing: userLocation!.coordinate.latitude),longitude: String(describing: userLocation!.coordinate.longitude))
+        }
+        else{
+            print("location not set")
+        }
+ 
     }
 }

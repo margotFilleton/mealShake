@@ -1,5 +1,5 @@
 PODS:
-  - Alamofire (4.0.1)
+  - Alamofire (4.5.1)
   - DynamicColor (3.1.0)
   - GoogleMaps (2.1.0):
     - GoogleMaps/Maps (= 2.1.0)
@@ -8,22 +8,25 @@ PODS:
     - GoogleMaps/Base (= 2.1.0)
   - GooglePlaces (2.1.0):
     - GoogleMaps/Base (= 2.1.0)
+  - SwiftyJSON (3.1.4)
   - Tactile (2.0)
 
 DEPENDENCIES:
-  - Alamofire (~> 4.0)
+  - Alamofire (~> 4.5.0)
   - DynamicColor (~> 3.1.0)
   - GoogleMaps
   - GooglePlaces
+  - SwiftyJSON
   - Tactile (~> 2.0)
 
 SPEC CHECKSUMS:
-  Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
   DynamicColor: 4dec283a881f7f9d9f3bc88fb5f306724242575f
-  GoogleMaps: '06589b9a38097bce0cd6e90f0fd9b5e4b4a9344c'
+  GoogleMaps: 06589b9a38097bce0cd6e90f0fd9b5e4b4a9344c
   GooglePlaces: 16e96266483b8010e9f275399403647978523c86
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   Tactile: 22d5686693be17568351b95aa83ef37457cd40f4
 
-PODFILE CHECKSUM: 6f2812b46a3b04ff5f823c5a77d174bb6a56af13
+PODFILE CHECKSUM: ad94c0a5c0e31c12c44bcd86507b0e4bebae2eaf
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.3.1
