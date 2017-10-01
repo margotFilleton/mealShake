@@ -14,28 +14,61 @@ import SwiftyJSON
 class GoogleApiPlace {
   
     //Get all places nearby the location
-    static func getPlaces(latitude: String, longitude : String, done: @escaping (String)->Void){
+    static func getPlacesRequest(latitude: String, longitude : String, done: @escaping (String)->Void){
         let url = "https://maps.googleapis.com/maps/api/place/radarsearch/json?location="+latitude+","+longitude+"&radius=50&type=restaurant&key="+APIkey.googleMapsAPIKey
         Alamofire.request(url).responseString{ response in
-            if let dataFromNetworking = response.result.value {
-             //  print(dataFromNetworking)
-                done(dataFromNetworking)
+            if let data = response.result.value {
+               //print(data)
+                done(data)
             }
         }
     }
     
     //Get a random placesID nearby the location
-    static func getplaceId(latitude: String, longitude : String){
-        self.getPlaces(latitude: latitude, longitude : longitude, done: {dataFromNetworking in
-            if let dataFromString = dataFromNetworking.data(using: .utf8, allowLossyConversion: false) {
-                let json = JSON(data: dataFromString)
-                if let placeId = json["results"][0]["place_id"].string {
-                    print(placeId)
+    static func getplaceId(latitude: String, longitude : String, done: @escaping (String)->Void){
+        self.getPlacesRequest(latitude: latitude, longitude : longitude, done: {places in
+            if let placesData = places.data(using: .utf8, allowLossyConversion: false) {
+                let jsonPlacesData = JSON(data: placesData)
+                let nbResult: Int = jsonPlacesData["results"].count
+                let randomNumber = arc4random_uniform(UInt32(nbResult))
+                if let placeId = jsonPlacesData["results"][Int(randomNumber)]["place_id"].string {
+                    //print(placeId)
+                    done(placeId)
                 }
             }
         })
     }
+   
+    //Get a detail of the place with its placesID
+    static func getDetailsPlaceRequest(placeId: String, done: @escaping (String)->Void){
+        let url = "https://maps.googleapis.com/maps/api/place/details/json?placeid="+placeId+"&key="+APIkey.googleMapsAPIKey
+        Alamofire.request(url).responseString{ response in
+            if let data = response.result.value {
+                print(data)
+                //done(data)
+            }
+        }
+    }
     
+    //photos
+    //name
+    //location
+    //geometry -- location -- lat lng
+    //formatted_address
+    
+    //Get a random placesID nearby the location
+    static func getDetailsPlace(placeId: String, done: @escaping (String)->Void){
+        self.getDetailsPlaceRequest(placeId: placeId, done: {placeDetailsJson in
+            if let placeDetails = placeDetailsJson.data(using: .utf8, allowLossyConversion: false) {
+                let placeDetailsData = JSON(data: placeDetails)
+            
+                if let placeId = placeDetailsData["result"]["geometry"]["location"]["lat"]["lng"].string {
+                    //print(placeId)
+                    done(placeId)
+                }
+            }
+        })
+    }
     
     
 }

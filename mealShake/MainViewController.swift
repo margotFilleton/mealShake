@@ -23,7 +23,11 @@ class MainViewController: UIViewController {
         userLocation = GoogleMapsManager.instance.getUserLocation()
       
         if userLocation != nil {
-            GoogleApiPlace.getplaceId(latitude: String(describing: userLocation!.coordinate.latitude),longitude: String(describing: userLocation!.coordinate.longitude))
+            GoogleApiPlace.getplaceId(latitude: String(describing: userLocation!.coordinate.latitude),longitude: String(describing: userLocation!.coordinate.longitude),done: {placeId in
+                GoogleApiPlace.getDetailsPlace(placeId: placeId,done: {jsonData in
+                    
+                })
+            })
         }
         else{
             print("location not set")
