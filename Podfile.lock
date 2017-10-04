@@ -1,5 +1,7 @@
 PODS:
   - Alamofire (4.5.1)
+  - AlamofireImage (3.3.0):
+    - Alamofire (~> 4.5)
   - DynamicColor (3.1.0)
   - GoogleMaps (2.1.0):
     - GoogleMaps/Maps (= 2.1.0)
@@ -13,6 +15,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.5.0)
+  - AlamofireImage (~> 3.3)
   - DynamicColor (~> 3.1.0)
   - GoogleMaps
   - GooglePlaces
@@ -21,12 +24,13 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  AlamofireImage: 2e784dc5d00f04903a52c1d169181469c805c3df
   DynamicColor: 4dec283a881f7f9d9f3bc88fb5f306724242575f
   GoogleMaps: 06589b9a38097bce0cd6e90f0fd9b5e4b4a9344c
   GooglePlaces: 16e96266483b8010e9f275399403647978523c86
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   Tactile: 22d5686693be17568351b95aa83ef37457cd40f4
 
-PODFILE CHECKSUM: ad94c0a5c0e31c12c44bcd86507b0e4bebae2eaf
+PODFILE CHECKSUM: 21db28de50376c389d3d42406ae3c97e0c98fe1f
 
 COCOAPODS: 1.3.1

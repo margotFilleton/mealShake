@@ -4,6 +4,7 @@ use_frameworks!
 
 target 'mealShake' do
  pod 'Alamofire', '~> 4.5.0'
+ pod 'AlamofireImage', '~> 3.3'
  pod 'Tactile', '~> 2.0'
  pod 'DynamicColor', '~> 3.1.0'
  pod 'GoogleMaps'

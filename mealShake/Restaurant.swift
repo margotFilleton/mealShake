@@ -8,9 +8,10 @@
 
 import Foundation
 import CoreLocation
+import UIKit
 
 struct Restaurant {
-    var photo: String
+    var photo: UIImage
     var name: String
     var adresse: String
     var location: CLLocation

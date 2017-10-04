@@ -9,17 +9,19 @@
 
 import Foundation
 import Alamofire
+import AlamofireImage
 import SwiftyJSON
 import CoreLocation
+import UIKit
 
 class GoogleApiPlace {
-  
+    
     //Get all places nearby the location
     static func getPlacesRequest(latitude: String, longitude : String, done: @escaping (String)->Void){
         let url = "https://maps.googleapis.com/maps/api/place/radarsearch/json?location="+latitude+","+longitude+"&radius=50&type=restaurant&key="+APIkey.googleMapsAPIKey
         Alamofire.request(url).responseString{ response in
             if let data = response.result.value {
-               //print(data)
+                //print(data)
                 done(data)
             }
         }
@@ -39,7 +41,7 @@ class GoogleApiPlace {
             }
         })
     }
-   
+    
     //Get a detail of the place with its placesID
     static func getDetailsPlaceRequest(placeId: String, done: @escaping (String)->Void){
         let url = "https://maps.googleapis.com/maps/api/place/details/json?placeid="+placeId+"&key="+APIkey.googleMapsAPIKey
@@ -50,41 +52,45 @@ class GoogleApiPlace {
             }
         }
     }
-   
-  
     
-    //photos
-    //name
-    //location
-    //geometry -- location -- lat lng
-    //formatted_address
+    //Get a photo with its reference
+    static func getPhoto(ref: String, done: @escaping (UIImage)->Void){
+        print("data")
+        let url = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photoreference="+ref+"&key="+APIkey.googleMapsAPIKey
+        Alamofire.request(url).responseImage{ response in
+            if let img = response.result.value {
+                done(img)
+            }
+        }
+    }
+    
     
     //Get a random placesID nearby the location
-    static func getDetailsPlace(placeId: String, done: @escaping (String)->Void){
+    static func getDetailsPlace(placeId: String, done: @escaping (Restaurant)->Void){
         self.getDetailsPlaceRequest(placeId: placeId, done: {placeDetailsJson in
             if let placeDetails = placeDetailsJson.data(using: .utf8, allowLossyConversion: false) {
                 let placeDetailsData = JSON(data: placeDetails)
                 var photoRef: String
-                var restaurant = Restaurant(photo: "", name: "", adresse: "", location: CLLocation())
+                var restaurant = Restaurant(photo: UIImage(), name: "", adresse: "", location: CLLocation())
                 if let lat = placeDetailsData["result"]["geometry"]["location"]["lat"].double {
-                     if let lng = placeDetailsData["result"]["geometry"]["location"]["lng"].double {
+                    if let lng = placeDetailsData["result"]["geometry"]["location"]["lng"].double {
                         restaurant.location = CLLocation(latitude: lat, longitude: lng)
                     }
                 }
                 if let photo = placeDetailsData["result"]["photos"][0]["photo_reference"].string {
                     photoRef = photo
-                 print(photoRef)
+                    getPhoto(ref: photoRef, done: {img in
+                        restaurant.photo = img
+                    })
+                    
                 }
                 if let name = placeDetailsData["result"]["name"].string {
-                     restaurant.name = name
+                    restaurant.name = name
                 }
                 if let adresse = placeDetailsData["result"]["formatted_address"].string {
-                     restaurant.adresse = adresse
+                    restaurant.adresse = adresse
                 }
-  
-                print(restaurant.name)
-                print(restaurant.adresse)
-                print(String(describing: restaurant.location))
+                done(restaurant)
             }
         })
     }
