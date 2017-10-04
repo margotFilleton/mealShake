@@ -18,9 +18,8 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = Theme.mainColor
-        let imgSize: CGFloat = 300
-        let shakeView = UIImageView(frame: CGRect(x: (UIScreen.main.bounds.width-imgSize)/2, y: (UIScreen.main.bounds.height-imgSize)/2, width: imgSize, height: imgSize))
-        //shakeView.contentMode = .center
+       let shakeView = UIImageView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+        shakeView.contentMode = .scaleAspectFit
         shakeView.image = shake
         view.addSubview(shakeView)
     }
