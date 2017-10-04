@@ -10,6 +10,7 @@
 import Foundation
 import Alamofire
 import SwiftyJSON
+import CoreLocation
 
 class GoogleApiPlace {
   
@@ -44,11 +45,13 @@ class GoogleApiPlace {
         let url = "https://maps.googleapis.com/maps/api/place/details/json?placeid="+placeId+"&key="+APIkey.googleMapsAPIKey
         Alamofire.request(url).responseString{ response in
             if let data = response.result.value {
-                print(data)
-                //done(data)
+                //print(data)
+                done(data)
             }
         }
     }
+   
+  
     
     //photos
     //name
@@ -61,11 +64,27 @@ class GoogleApiPlace {
         self.getDetailsPlaceRequest(placeId: placeId, done: {placeDetailsJson in
             if let placeDetails = placeDetailsJson.data(using: .utf8, allowLossyConversion: false) {
                 let placeDetailsData = JSON(data: placeDetails)
-            
-                if let placeId = placeDetailsData["result"]["geometry"]["location"]["lat"]["lng"].string {
-                    //print(placeId)
-                    done(placeId)
+                var photoRef: String
+                var restaurant = Restaurant(photo: "", name: "", adresse: "", location: CLLocation())
+                if let lat = placeDetailsData["result"]["geometry"]["location"]["lat"].double {
+                     if let lng = placeDetailsData["result"]["geometry"]["location"]["lng"].double {
+                        restaurant.location = CLLocation(latitude: lat, longitude: lng)
+                    }
                 }
+                if let photo = placeDetailsData["result"]["photos"][0]["photo_reference"].string {
+                    photoRef = photo
+                 print(photoRef)
+                }
+                if let name = placeDetailsData["result"]["name"].string {
+                     restaurant.name = name
+                }
+                if let adresse = placeDetailsData["result"]["formatted_address"].string {
+                     restaurant.adresse = adresse
+                }
+  
+                print(restaurant.name)
+                print(restaurant.adresse)
+                print(String(describing: restaurant.location))
             }
         })
     }

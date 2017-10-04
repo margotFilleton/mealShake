@@ -244,7 +244,7 @@
 				TargetAttributes = {
 					85C9EEE21E9A96E000735399 = {
 						CreatedOnToolsVersion = 8.3.1;
-						DevelopmentTeam = KQZ9DR9AQ3;
+						DevelopmentTeam = X64Q5V7Z7C;
 						ProvisioningStyle = Automatic;
 					};
 					85C9EEF61E9A96E000735399 = {
@@ -501,11 +501,12 @@
 			baseConfigurationReference = F716735917BDAFB01ADA2E84 /* Pods-mealShake.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = KQZ9DR9AQ3;
+				DEVELOPMENT_TEAM = X64Q5V7Z7C;
 				INFOPLIST_FILE = mealShake/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mfilleton.mealShake;
+				PRODUCT_BUNDLE_IDENTIFIER = fr.docapost.mealShake;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -515,11 +516,12 @@
 			baseConfigurationReference = A85C2A758D0B42AE042D5553 /* Pods-mealShake.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = KQZ9DR9AQ3;
+				DEVELOPMENT_TEAM = X64Q5V7Z7C;
 				INFOPLIST_FILE = mealShake/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mfilleton.mealShake;
+				PRODUCT_BUNDLE_IDENTIFIER = fr.docapost.mealShake;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
