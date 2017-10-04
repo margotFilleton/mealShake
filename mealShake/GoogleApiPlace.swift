@@ -18,7 +18,7 @@ class GoogleApiPlace {
     
     //Get all places nearby the location
     static func getPlacesRequest(latitude: String, longitude : String, done: @escaping (String)->Void){
-        let url = "https://maps.googleapis.com/maps/api/place/radarsearch/json?location="+latitude+","+longitude+"&radius=50&type=restaurant&key="+APIkey.googleMapsAPIKey
+        let url = "https://maps.googleapis.com/maps/api/place/radarsearch/json?location="+latitude+","+longitude+"&radius=100&type=restaurant&key="+APIkey.googleMapsAPIKey
         Alamofire.request(url).responseString{ response in
             if let data = response.result.value {
                 //print(data)

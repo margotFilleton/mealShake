@@ -11,5 +11,7 @@ import UIKit
 import DynamicColor
 
 public class Theme {
-    static let mainColor = UIColor(hex: 0xf27575)
+    static let mainColor = UIColor(hex: 0xE931AE)
+    static let mainColorSecondary = UIColor(hex: 0x6756DE)
+    static let textColor = UIColor(hex: 0x4A4A4A)
 }
