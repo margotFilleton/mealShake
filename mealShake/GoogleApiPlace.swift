@@ -55,7 +55,6 @@ class GoogleApiPlace {
     
     //Get a photo with its reference
     static func getPhoto(ref: String, done: @escaping (UIImage)->Void){
-        print("data")
         let url = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photoreference="+ref+"&key="+APIkey.googleMapsAPIKey
         Alamofire.request(url).responseImage{ response in
             if let img = response.result.value {
