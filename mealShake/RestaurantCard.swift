@@ -54,10 +54,13 @@ class RestaurantCard: UIView {
         photoView.contentMode = .scaleAspectFill
         photoView.clipsToBounds = true
         photoView.image = restaurant.photo
+        
+        let starRank = StarRankView(frame: CGRect(x: 0, y: adress.frame.maxY, width: frame.width, height: frame.height/3 + 20), rank: restaurant.rank)
 
         layer.addSublayer(shadowLayer)
         addSubview(backgroundView)
         backgroundView.addSubview(title)
+        backgroundView.addSubview(starRank)
         backgroundView.addSubview(adress)
         backgroundView.addSubview(photoView)
     }

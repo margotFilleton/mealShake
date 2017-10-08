@@ -15,4 +15,5 @@ struct Restaurant {
     var name: String
     var adresse: String
     var location: CLLocation
+	var rank: Float
 }

@@ -69,7 +69,7 @@ class GoogleApiPlace {
     
     //Get a random placesID nearby the location
     static func getDetailsPlace(placeId: String, done: @escaping (Restaurant)->Void){
-        var restaurant = Restaurant(photo: UIImage(), name: "", adresse: "", location: CLLocation())
+        var restaurant = Restaurant(photo: UIImage(), name: "", adresse: "", location: CLLocation(),rank: 4.5)
         self.getDetailsPlaceRequest(placeId: placeId, done: {placeDetailsJson in
             if let placeDetails = placeDetailsJson.data(using: .utf8, allowLossyConversion: false) {
                 let placeDetailsData = JSON(data: placeDetails)
