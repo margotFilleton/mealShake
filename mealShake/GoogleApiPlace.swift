@@ -95,6 +95,10 @@ class GoogleApiPlace {
                     })
                     
                 }
+                if let rank = placeDetailsData["result"]["rating"].float {
+                   restaurant.rank = rank
+                    
+                }
                
             }
          

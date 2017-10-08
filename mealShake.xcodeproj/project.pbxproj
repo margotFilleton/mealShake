@@ -19,6 +19,7 @@
 		857738221E9AA26300002CAB /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857738211E9AA26300002CAB /* Theme.swift */; };
 		85A2D6FF1E9AA9630036FCC2 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A2D6FE1E9AA9630036FCC2 /* APIKey.swift */; };
 		85A2D7011E9AAB8F0036FCC2 /* GoogleMapsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A2D7001E9AAB8F0036FCC2 /* GoogleMapsManager.swift */; };
+		85C01C7D1F8A7BA100DD8FF3 /* Goto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C01C7C1F8A7BA100DD8FF3 /* Goto.swift */; };
 		85C9EEE71E9A96E000735399 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C9EEE61E9A96E000735399 /* AppDelegate.swift */; };
 		85C9EEEE1E9A96E000735399 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85C9EEED1E9A96E000735399 /* Assets.xcassets */; };
 		85C9EEF11E9A96E000735399 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85C9EEEF1E9A96E000735399 /* LaunchScreen.storyboard */; };
@@ -47,6 +48,7 @@
 		857738211E9AA26300002CAB /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		85A2D6FE1E9AA9630036FCC2 /* APIKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		85A2D7001E9AAB8F0036FCC2 /* GoogleMapsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleMapsManager.swift; sourceTree = "<group>"; };
+		85C01C7C1F8A7BA100DD8FF3 /* Goto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goto.swift; sourceTree = "<group>"; };
 		85C9EEE31E9A96E000735399 /* mealShake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mealShake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85C9EEE61E9A96E000735399 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		85C9EEED1E9A96E000735399 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 			children = (
 				8507D6921F89AB720089558F /* StarRank */,
 				856016251F85901500962AB5 /* RestaurantCard.swift */,
+				85C01C7C1F8A7BA100DD8FF3 /* Goto.swift */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -395,6 +398,7 @@
 				85A2D6FF1E9AA9630036FCC2 /* APIKey.swift in Sources */,
 				8507D6911F89A9AB0089558F /* StarRankView.swift in Sources */,
 				857738201E9AA12C00002CAB /* MainViewController.swift in Sources */,
+				85C01C7D1F8A7BA100DD8FF3 /* Goto.swift in Sources */,
 				85A2D7011E9AAB8F0036FCC2 /* GoogleMapsManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

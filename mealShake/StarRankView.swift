@@ -22,7 +22,6 @@ class StarRankView: UIView {
         let nbHalft :Float = rank.truncatingRemainder(dividingBy: 1.0)
         var nbStar: Int = 5
         
-        print(nbHalft)
         starText = UITextView(frame: CGRect(x: 10, y: 0, width: frame.width - 20, height: 40))
         starText.text = ""
         if(nbFullStar > 0){

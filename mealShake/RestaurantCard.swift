@@ -20,7 +20,7 @@ class RestaurantCard: UIView {
         
       
         backgroundView = UIView(frame: CGRect(x: 0, y: 0, width: frame.width, height: frame.height))
-        title = UILabel(frame: CGRect(x: 10, y: (frame.height/3) + 20, width: frame.width - 20, height: 80))
+        title = UILabel(frame: CGRect(x: 10, y: (frame.height/3) + 40, width: frame.width - 20, height: 80))
         title.text = restaurant.name
   
         title.numberOfLines = 0
@@ -57,12 +57,16 @@ class RestaurantCard: UIView {
         
         let starRank = StarRankView(frame: CGRect(x: 0, y: adress.frame.maxY, width: frame.width, height: frame.height/3 + 20), rank: restaurant.rank)
 
+        let sizeGoto: CGFloat = 60
+        let btnGoto = Goto(frame: CGRect(x: (frame.width - sizeGoto) - 20, y: (photoView.frame.maxY) - sizeGoto/2, width: sizeGoto, height: sizeGoto), location: restaurant.location)
+        
         layer.addSublayer(shadowLayer)
         addSubview(backgroundView)
         backgroundView.addSubview(title)
         backgroundView.addSubview(starRank)
         backgroundView.addSubview(adress)
         backgroundView.addSubview(photoView)
+        backgroundView.addSubview(btnGoto)
     }
     
     required init?(coder aDecoder: NSCoder) {

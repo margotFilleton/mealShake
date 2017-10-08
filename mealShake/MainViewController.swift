@@ -17,7 +17,7 @@ class MainViewController: UIViewController {
     private let cardHeight: CGFloat = 468
     
     override func viewWillAppear(_ animated: Bool) {
-      //  GoogleMapsManager.instance.getUserLocation()
+        GoogleMapsManager.instance.getUserLocation()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +26,7 @@ class MainViewController: UIViewController {
         shakeView.contentMode = .scaleAspectFit
         shakeView.image = shake
         view.addSubview(shakeView)
+        
         
     }
     
