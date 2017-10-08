@@ -18,7 +18,7 @@ class GoogleApiPlace {
     
     //Get all places nearby the location
     static func getPlacesRequest(latitude: String, longitude : String, done: @escaping (String)->Void){
-        let url = "https://maps.googleapis.com/maps/api/place/radarsearch/json?location="+latitude+","+longitude+"&radius=100&type=restaurant&key="+APIkey.googleMapsAPIKey
+        let url = "https://maps.googleapis.com/maps/api/place/radarsearch/json?location="+latitude+","+longitude+"&radius=200&type=restaurant&key="+APIkey.googleMapsAPIKey
         Alamofire.request(url).responseString{ response in
             if let data = response.result.value {
                 //print(data)
@@ -60,28 +60,25 @@ class GoogleApiPlace {
             if let img = response.result.value {
                 done(img)
             }
+            else{
+                print("error request photo")
+            }
         }
     }
     
     
     //Get a random placesID nearby the location
     static func getDetailsPlace(placeId: String, done: @escaping (Restaurant)->Void){
+        var restaurant = Restaurant(photo: UIImage(), name: "", adresse: "", location: CLLocation())
         self.getDetailsPlaceRequest(placeId: placeId, done: {placeDetailsJson in
             if let placeDetails = placeDetailsJson.data(using: .utf8, allowLossyConversion: false) {
                 let placeDetailsData = JSON(data: placeDetails)
                 var photoRef: String
-                var restaurant = Restaurant(photo: UIImage(), name: "", adresse: "", location: CLLocation())
+                
                 if let lat = placeDetailsData["result"]["geometry"]["location"]["lat"].double {
                     if let lng = placeDetailsData["result"]["geometry"]["location"]["lng"].double {
                         restaurant.location = CLLocation(latitude: lat, longitude: lng)
                     }
-                }
-                if let photo = placeDetailsData["result"]["photos"][0]["photo_reference"].string {
-                    photoRef = photo
-                    getPhoto(ref: photoRef, done: {img in
-                        restaurant.photo = img
-                    })
-                    
                 }
                 if let name = placeDetailsData["result"]["name"].string {
                     restaurant.name = name
@@ -89,9 +86,20 @@ class GoogleApiPlace {
                 if let adresse = placeDetailsData["result"]["formatted_address"].string {
                     restaurant.adresse = adresse
                 }
-                done(restaurant)
+                if let photo = placeDetailsData["result"]["photos"][0]["photo_reference"].string {
+                    photoRef = photo
+                    getPhoto(ref: photoRef, done: {img in
+                        restaurant.photo = img
+                        done(restaurant)
+                        
+                    })
+                    
+                }
+               
             }
+         
         })
+        
     }
     
     
