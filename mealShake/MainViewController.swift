@@ -11,7 +11,7 @@ import GoogleMaps
 
 class MainViewController: UIViewController {
     var userLocation: CLLocation?
-    let shake = UIImage(named: "shakeImgWhite")
+    let fond = UIImage(named: "fond")
     var restaurantCard: RestaurantCard?
     private let cardWidth: CGFloat = 280
     private let cardHeight: CGFloat = 468
@@ -22,10 +22,10 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
-        let shakeView = UIImageView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
-        shakeView.contentMode = .scaleAspectFit
-        shakeView.image = shake
-        view.addSubview(shakeView)
+        let backgroundView = UIImageView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+        backgroundView.contentMode = .scaleAspectFit
+        backgroundView.image = fond
+        view.addSubview(backgroundView)
         
         
     }

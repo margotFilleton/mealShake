@@ -20,8 +20,8 @@
 		85A2D6FF1E9AA9630036FCC2 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A2D6FE1E9AA9630036FCC2 /* APIKey.swift */; };
 		85A2D7011E9AAB8F0036FCC2 /* GoogleMapsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A2D7001E9AAB8F0036FCC2 /* GoogleMapsManager.swift */; };
 		85C01C7D1F8A7BA100DD8FF3 /* Goto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C01C7C1F8A7BA100DD8FF3 /* Goto.swift */; };
+		85C59A0C1F8A9A8300A7AFCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 853C96B41F8A991C00C9063D /* Assets.xcassets */; };
 		85C9EEE71E9A96E000735399 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C9EEE61E9A96E000735399 /* AppDelegate.swift */; };
-		85C9EEEE1E9A96E000735399 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85C9EEED1E9A96E000735399 /* Assets.xcassets */; };
 		85C9EEF11E9A96E000735399 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85C9EEEF1E9A96E000735399 /* LaunchScreen.storyboard */; };
 		85C9EEFC1E9A96E000735399 /* mealShakeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C9EEFB1E9A96E000735399 /* mealShakeTests.swift */; };
 /* End PBXBuildFile section */
@@ -42,6 +42,7 @@
 		8521B9561F818AB00085449F /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		8529E5B91F89B6BE00C48206 /* fontawesome-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fontawesome-webfont.ttf"; sourceTree = "<group>"; };
 		8529E5BA1F89B86D00C48206 /* MaterialIcons-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MaterialIcons-Regular.ttf"; sourceTree = "<group>"; };
+		853C96B41F8A991C00C9063D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		856016251F85901500962AB5 /* RestaurantCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCard.swift; sourceTree = "<group>"; };
 		8577381D1E9A9D9000002CAB /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		8577381F1E9AA12C00002CAB /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -51,7 +52,6 @@
 		85C01C7C1F8A7BA100DD8FF3 /* Goto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goto.swift; sourceTree = "<group>"; };
 		85C9EEE31E9A96E000735399 /* mealShake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mealShake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85C9EEE61E9A96E000735399 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		85C9EEED1E9A96E000735399 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		85C9EEF01E9A96E000735399 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		85C9EEF21E9A96E000735399 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85C9EEF71E9A96E000735399 /* mealShakeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mealShakeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,9 +101,9 @@
 		857738161E9A9C3D00002CAB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				853C96B41F8A991C00C9063D /* Assets.xcassets */,
 				8529E5BA1F89B86D00C48206 /* MaterialIcons-Regular.ttf */,
 				8529E5B91F89B6BE00C48206 /* fontawesome-webfont.ttf */,
-				85C9EEED1E9A96E000735399 /* Assets.xcassets */,
 				85C9EEEF1E9A96E000735399 /* LaunchScreen.storyboard */,
 			);
 			name = Resources;
@@ -304,7 +304,7 @@
 			files = (
 				8529E5BC1F8A493100C48206 /* fontawesome-webfont.ttf in Resources */,
 				85C9EEF11E9A96E000735399 /* LaunchScreen.storyboard in Resources */,
-				85C9EEEE1E9A96E000735399 /* Assets.xcassets in Resources */,
+				85C59A0C1F8A9A8300A7AFCF /* Assets.xcassets in Resources */,
 				8529E5BD1F8A493500C48206 /* MaterialIcons-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
